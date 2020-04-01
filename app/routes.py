@@ -9,6 +9,8 @@ from transformers import BertTokenizer
 import json
 from app.article import Article
 
+# https://stackoverflow.com/questions/59122308/heroku-slug-size-too-large-after-installing-pytorch
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
