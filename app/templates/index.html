@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Covid articles retriever</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css')}}">
+</head>
+
+<body>
+    <h1>
+        Enter text in the box to search through the Covid19 dataset
+    </h1>
+    <div class="form">
+        <form action="" method="post" novalidate>
+            {{ form.query(class="query_field", placeholder="Search") }}
+            {{ form.submit(class="submit_field", placeholder="Submit") }}
+        </form>
+    </div>
+    {% if documents %}
+    <div class="retrieved-documents">
+        {% for document in documents %}
+        <div class="document">
+            <p>Author: {{ document.author }}</p>
+            <p>Title: {{ document.title }}</p>
+            <p>Abstract: {{ document.abstract }}</p>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+{
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/Users/gorjanradevski/Library/Caches/pypoetry/virtualenvs/covid-retrieval-_OILVGHl-py3.7/bin/python/"
+}
