@@ -24,10 +24,11 @@
             <div class="col-md-10 offset-md-1">
                 {% for document in documents %}
                 <div class="card document">
-                    <div class="card-header">Title: {{ document.title }}</div>
+                    <div class="card-header">{{ document.title }}</div>
                     <div class="card-body">
-                        <h5 class="card-title">Author: {{ document.author }}</h5>
-                        <p class="card-text">Abstract: {{ document.abstract }}</p>
+                        <h5 class="card-title">Authors: {{ document.authors }}</h5>
+                        <p class="card-text">{{ document.abstract }}</p>
+                        <a href="{{ document.link }}" , class="btn btn-primary" , target="_blank">Open document</a>
                     </div>
                 </div>
                 {% endfor %}

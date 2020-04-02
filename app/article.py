@@ -8,7 +8,8 @@ class Article:
         self.id = article_json["id"]
         self.title = article_json["title"]
         self.abstract = article_json["abstract"]
-        self.author = article_json["author"]
+        self.authors = article_json["author"]
+        self.link = article_json["link"]
         self.distance_to_query = self.set_distance_to_query(query)
 
     def set_distance_to_query(self, query_coords: np.ndarray):
