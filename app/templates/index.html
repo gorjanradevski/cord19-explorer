@@ -1,17 +1,42 @@
 <html>
 
 <head>
-    <title>Covid articles retriever</title>
+    <title>Covid19-Explorer</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="#" target="_blank">Arxiv paper</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Github repo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/gorjanradevski/covid19-visualizer"
+                target="_blank">Covid19-Visualizer</a>
+        </li>
+    </ul>
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <h1 class="main-header text-center">Covid19 dataset explorer</h1>
+                <h1 class="main-header text-center h1">Covid19-Explorer</h1>
+                <p class="main-text">The Covid19-Explorer is a tool done within the
+                    scope of the Macchina project at ESAT-PSI at KU Leuven. The
+                    Covid19-Explorer is a tool that is supposed to help machine learning researchers, medical
+                    experts as well as the general audience to expore the data from
+                    the Covid19 dataset by AllenAI. An explanation of what the explorer
+                    does in the background can be found in the Arxiv submission found in
+                    the navigation. Furthermore, the full code (as well as the deep
+                    learning model) are shared within the Github repository (also
+                    shared in the navigation) under the MIT license. Last but not least,
+                    we share a link to the Covid19-Visualizer, which is also a tool done
+                    within the scope of the project - also explained in detail in the
+                    Arxiv submission.
+                </p>
                 <form action="" method="post" novalidate>
                     <div class="form-group">{{ form.query(class="form-control form-control-lg", placeholder="Search") }}
                     </div>
@@ -36,7 +61,13 @@
             {% endif %}
         </div>
     </div>
-
+    <div class="fixed-bottom text-center">
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">Dusan Grujicic<sup>*</sup>, Gorjan Radevski<sup>*</sup>, Tinne Tuytelaars, Matthew Blaschko
+            </p>
+            <footer class="blockquote-footer"><cite title="Source Title"><sup>*</sup>Equal contribution</cite></footer>
+        </blockquote>
+    </div>
 </body>
 
 </html>
