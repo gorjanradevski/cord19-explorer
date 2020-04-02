@@ -10,6 +10,7 @@ import json
 from app.article import Article
 
 # https://stackoverflow.com/questions/59122308/heroku-slug-size-too-large-after-installing-pytorch
+# https://download.pytorch.org/whl/torch_stable.html
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -23,7 +24,7 @@ def index():
         )
         model.load_state_dict(
             torch.load(
-                "app/static/models/sentence_mapping_reg_L4H256A4",
+                "app/static/models/sentence_mapping_reg_L4H256A4.pt",
                 map_location=torch.device("cpu"),
             )
         )
