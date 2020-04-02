@@ -3,30 +3,39 @@
 <head>
     <title>Covid articles retriever</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>
-        Enter text in the box to search through the Covid19 dataset
-    </h1>
-    <div class="form">
-        <form action="" method="post" novalidate>
-            {{ form.query(class="query_field", placeholder="Search") }}
-            {{ form.submit(class="submit_field", placeholder="Submit") }}
-        </form>
-    </div>
-    {% if documents %}
-    <div class="retrieved-documents">
-        {% for document in documents %}
-        <div class="document">
-            <p>Author: {{ document.author }}</p>
-            <p>Title: {{ document.title }}</p>
-            <p>Abstract: {{ document.abstract }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <h1 class="main-header text-center">Covid19 dataset explorer</h1>
+                <form action="" method="post" novalidate>
+                    <div class="form-group">{{ form.query(class="form-control form-control-lg", placeholder="Search") }}
+                    </div>
+                    <div class="form-group text-center">
+                        {{ form.submit(class="btn btn-primary btn-md", placeholder="Submit") }}
+                    </div>
+                </form>
+            </div>
+            {% if documents %}
+            <div class="col-md-10 offset-md-1">
+                {% for document in documents %}
+                <div class="card document">
+                    <div class="card-header">Title: {{ document.title }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Author: {{ document.author }}</h5>
+                        <p class="card-text">Abstract: {{ document.abstract }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
-        <hr>
-        {% endfor %}
     </div>
-    {% endif %}
+
 </body>
 
 </html>

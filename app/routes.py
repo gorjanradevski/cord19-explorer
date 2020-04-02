@@ -39,5 +39,5 @@ def index():
         ]
         articles_sorted = sorted(articles, key=lambda x: x.distance_to_query)
 
-        return render_template("index.html", documents=articles_sorted[:20], form=form)
+        return render_template("index.html", documents=articles_sorted[:200], form=form)
     return render_template("index.html", form=form)
