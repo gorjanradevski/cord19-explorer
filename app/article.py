@@ -5,11 +5,11 @@ import numpy as np
 class Article:
     def __init__(self, article_json: Dict[str, Any], query: np.ndarray):
         self.coords = np.array(article_json["coords"])
-        self.id = article_json["id"]
+        self.id = article_json["paper_id"]
         self.title = article_json["title"]
         self.abstract = article_json["abstract"]
-        self.authors = article_json["author"]
-        self.link = article_json["link"]
+        self.authors = article_json["authors"]
+        self.url = article_json["url"]
         self.distance_to_query = self.set_distance_to_query(query)
 
     def set_distance_to_query(self, query_coords: np.ndarray):
