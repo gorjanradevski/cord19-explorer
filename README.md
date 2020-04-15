@@ -1,1 +1,1 @@
-# Explorer for the Covid19 dataset
+# Explorer for the [Cord19 dataset](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)
