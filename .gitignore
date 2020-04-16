@@ -2,4 +2,3 @@ data/
 notebooks/
 __pycache__/
 .vscode/
-app/static/models
