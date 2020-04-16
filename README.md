@@ -4,6 +4,6 @@ The Cord19-Explorer is a tool developed within [ESAT-PSI](https://www.esat.kuleu
 
 ## Other links
 
-- [NLP COVID-19 Workshop](https://openreview.net/group?id=aclweb.org/ACL/2020/Workshop/NLP-COVID)
+- [NLP COVID-19 Workshop](https://openreview.net/forum?id=EC1vWkJXpjy)
 - [Cord19-Visualizer](https://github.com/dusangrujicic/cord19-visualizer)
 - [Codebase for training the models](https://github.com/gorjanradevski/macchina/tree/gorjan)
