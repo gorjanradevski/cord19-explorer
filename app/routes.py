@@ -22,10 +22,9 @@ def index():
     tokenizer = BertTokenizer.from_pretrained("google/bert_uncased_L-4_H-512_A-8")
     # Download model
     url = "https://drive.google.com/uc?id=11OHi9wETRPAHUTIH4p6BqZY3gH6NJtve"
-    model_path = "app/static/models/cord_smallbert_grounding.pt"
+    model_path = os.path.abspath("app/static/models/cord_smallbert_grounding.pt")
     if not os.path.exists(model_path):
-        model_path = gdown.download(url, model_path, quiet=False)
-        print(model_path)
+        gdown.download(url, model_path, quiet=True)
     if form.query.data is not None:
         config = BertConfig.from_pretrained("google/bert_uncased_L-4_H-512_A-8")
         model = nn.DataParallel(
@@ -42,9 +41,6 @@ def index():
             for article_json in json.load(open("app/static/articles_coords_10_4.json"))
         ]
         articles_sorted = sorted(articles, key=lambda x: x.distance_to_query)
-
-        for article in articles_sorted[:20]:
-            print(article.distance_to_query)
 
         return render_template("index.html", documents=articles_sorted[:200], form=form)
     return render_template("index.html", form=form)
