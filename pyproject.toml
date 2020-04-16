@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "covid-retrieval"
+name = "cord19-explorer"
 version = "0.1.0"
 description = ""
 authors = ["gorjanradevski <gorjanradevski@gmail.com>"]
@@ -14,6 +14,7 @@ flask-wtf = "^0.14.3"
 nltk = "^3.4.5"
 tqdm = "^4.44.1"
 gunicorn = "^20.0.4"
+gdown = "^3.10.2"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.7.9"
