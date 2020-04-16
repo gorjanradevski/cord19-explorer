@@ -8,8 +8,8 @@ from torch import nn
 from transformers import BertTokenizer
 import json
 
-# import gdown
-# import os
+import gdown
+import os
 from app.article import Article
 
 # https://stackoverflow.com/questions/59122308/heroku-slug-size-too-large-after-installing-pytorch
@@ -21,10 +21,11 @@ def index():
     form = SearchForm()
     tokenizer = BertTokenizer.from_pretrained("google/bert_uncased_L-4_H-512_A-8")
     # Download model
-    # url = "https://drive.google.com/uc?id=11OHi9wETRPAHUTIH4p6BqZY3gH6NJtve"
+    url = "https://drive.google.com/uc?id=11OHi9wETRPAHUTIH4p6BqZY3gH6NJtve"
     model_path = "app/static/models/cord_smallbert_grounding.pt"
-    # if not os.path.exists(model_path):
-    # gdown.download(url, model_path, quiet=True)
+    if not os.path.exists(model_path):
+        model_path = gdown.download(url, model_path, quiet=True)
+        print(model_path)
     if form.query.data is not None:
         config = BertConfig.from_pretrained("google/bert_uncased_L-4_H-512_A-8")
         model = nn.DataParallel(
