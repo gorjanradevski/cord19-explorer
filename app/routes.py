@@ -24,7 +24,7 @@ def index():
     url = "https://drive.google.com/uc?id=11OHi9wETRPAHUTIH4p6BqZY3gH6NJtve"
     model_path = "app/static/models/cord_smallbert_grounding.pt"
     if not os.path.exists(model_path):
-        model_path = gdown.download(url, model_path, quiet=True)
+        model_path = gdown.download(url, model_path, quiet=False)
         print(model_path)
     if form.query.data is not None:
         config = BertConfig.from_pretrained("google/bert_uncased_L-4_H-512_A-8")
